@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DecentraClick Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button>
+  <div class="sidebar-overlay"></div>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon">&#9670;</div>
+          DecentraClick
+        </div>
+        <div class="sidebar-version">Documentation v1.0</div>
+      </div>
+      <div class="sidebar-search">
+        <input type="text" placeholder="Search docs...">
+      </div>
+      <div class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Getting Started</div>
+          <div class="nav-link active" onclick="navigate('index.html')"><span class="nav-icon">&#127968;</span> Home</div>
+          <div class="nav-link" onclick="navigate('pages/architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div>
+          <div class="nav-link" onclick="navigate('pages/quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Core Platform</div>
+          <div class="nav-link" onclick="navigate('pages/domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div>
+          <div class="nav-link" onclick="navigate('pages/identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div>
+          <div class="nav-link" onclick="navigate('pages/rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div>
+          <div class="nav-link" onclick="navigate('pages/namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div>
+          <div class="nav-link" onclick="navigate('pages/events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Blockchain</div>
+          <div class="nav-link" onclick="navigate('pages/smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div>
+          <div class="nav-link" onclick="navigate('pages/diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div>
+          <div class="nav-link" onclick="navigate('pages/account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div>
+          <div class="nav-link" onclick="navigate('pages/smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Governance &amp; Finance</div>
+          <div class="nav-link" onclick="navigate('pages/dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div>
+          <div class="nav-link" onclick="navigate('pages/treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div>
+          <div class="nav-link" onclick="navigate('pages/defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div>
+          <div class="nav-link" onclick="navigate('pages/escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div>
+          <div class="nav-link" onclick="navigate('pages/trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Services</div>
+          <div class="nav-link" onclick="navigate('pages/compute.html')"><span class="nav-icon">&#9881;</span> Compute</div>
+          <div class="nav-link" onclick="navigate('pages/database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div>
+          <div class="nav-link" onclick="navigate('pages/graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div>
+          <div class="nav-link" onclick="navigate('pages/oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div>
+          <div class="nav-link" onclick="navigate('pages/cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div>
+          <div class="nav-link" onclick="navigate('pages/email.html')"><span class="nav-icon">&#9993;</span> Email</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Web &amp; Apps</div>
+          <div class="nav-link" onclick="navigate('pages/dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div>
+          <div class="nav-link" onclick="navigate('pages/pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div>
+          <div class="nav-link" onclick="navigate('pages/apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div>
+          <div class="nav-link" onclick="navigate('pages/plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Data &amp; Content</div>
+          <div class="nav-link" onclick="navigate('pages/nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div>
+          <div class="nav-link" onclick="navigate('pages/wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div>
+          <div class="nav-link" onclick="navigate('pages/crm.html')"><span class="nav-icon">&#128101;</span> CRM</div>
+          <div class="nav-link" onclick="navigate('pages/supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Trust &amp; Compliance</div>
+          <div class="nav-link" onclick="navigate('pages/compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div>
+          <div class="nav-link" onclick="navigate('pages/reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div>
+          <div class="nav-link" onclick="navigate('pages/interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="hero">
+        <h1>DecentraClick Documentation</h1>
+        <p>The complete guide to the decentralized application platform built on Optimism. Domains as organizations, composable services, and sovereign infrastructure.</p>
+        <div class="hero-badges">
+          <span class="badge"><span class="dot"></span> Built on Optimism</span>
+          <span class="badge">&#128142; EIP-2535 Diamond</span>
+          <span class="badge">&#128274; ERC-4337</span>
+          <span class="badge">&#127760; Gun.js P2P</span>
+          <span class="badge">&#9881; React + TypeScript</span>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2>Platform Overview</h2>
+        <p>DecentraClick is a multi-tenant, composable infrastructure platform where domains function as organizations. It provides a rich ecosystem of plugins, apps, and services &mdash; all built on decentralized technologies with blockchain settlement on Optimism.</p>
+
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>New to DecentraClick? Start with the <a href="pages/quickstart.html">Quick Start Guide</a> to get up and running, then explore the <a href="pages/architecture.html">Architecture Overview</a> to understand how everything fits together.</div>
+        </div>
+
+        <h2>Core Concepts</h2>
+        <div class="card-grid">
+          <div class="card" data-href="pages/domains.html">
+            <div class="card-icon purple">&#127760;</div>
+            <h3>Domains as Organizations</h3>
+            <p>Register domains that become fully-featured organizations with members, roles, treasury, governance, and subdomains.</p>
+            <div class="card-tags"><span class="tag">Multi-tenant</span><span class="tag">Governance</span></div>
+          </div>
+          <div class="card" data-href="pages/identity.html">
+            <div class="card-icon blue">&#128100;</div>
+            <h3>Decentralized Identity</h3>
+            <p>ERC-1056 identity registry with verifiable credentials, attestations, KYC/AML integration, and multi-wallet linking.</p>
+            <div class="card-tags"><span class="tag">ERC-1056</span><span class="tag">KYC</span></div>
+          </div>
+          <div class="card" data-href="pages/diamond.html">
+            <div class="card-icon green">&#128142;</div>
+            <h3>Diamond Proxy (EIP-2535)</h3>
+            <p>Modular smart contract system with 43+ facets for tokens, DeFi, governance, identity, and more. Mix and match capabilities.</p>
+            <div class="card-tags"><span class="tag">43+ Facets</span><span class="tag">Upgradeable</span></div>
+          </div>
+          <div class="card" data-href="pages/account-abstraction.html">
+            <div class="card-icon orange">&#128179;</div>
+            <h3>Account Abstraction</h3>
+            <p>ERC-4337 smart accounts with gasless transactions, paymasters, session keys, and guardian recovery.</p>
+            <div class="card-tags"><span class="tag">ERC-4337</span><span class="tag">Gasless</span></div>
+          </div>
+          <div class="card" data-href="pages/dao.html">
+            <div class="card-icon cyan">&#127963;</div>
+            <h3>DAO Governance</h3>
+            <p>Full governance framework with multiple voting strategies, proposal types, delegation, and treasury management.</p>
+            <div class="card-tags"><span class="tag">Proposals</span><span class="tag">Voting</span></div>
+          </div>
+          <div class="card" data-href="pages/plugins.html">
+            <div class="card-icon pink">&#128268;</div>
+            <h3>Plugin SDK</h3>
+            <p>Extend the platform with sandboxed plugins. 11 permission categories, iframe isolation, and a full lifecycle API.</p>
+            <div class="card-tags"><span class="tag">Sandboxed</span><span class="tag">Extensible</span></div>
+          </div>
+        </div>
+
+        <h2>Infrastructure Services</h2>
+        <div class="card-grid">
+          <div class="card" data-href="pages/compute.html">
+            <div class="card-icon purple">&#9881;</div>
+            <h3>Serverless Compute</h3>
+            <p>Deploy WASM functions triggered by on-chain events, webhooks, or cron schedules with sandboxed execution.</p>
+          </div>
+          <div class="card" data-href="pages/database.html">
+            <div class="card-icon blue">&#128451;</div>
+            <h3>Decentralized Database</h3>
+            <p>P2P data storage powered by Gun.js with namespace isolation, CRDT conflict resolution, and offline support.</p>
+          </div>
+          <div class="card" data-href="pages/graphql.html">
+            <div class="card-icon green">&#128268;</div>
+            <h3>GraphQL API</h3>
+            <p>In-browser GraphQL server with 6 schema modules, type-safe resolvers, caching, and real-time subscriptions.</p>
+          </div>
+          <div class="card" data-href="pages/dweb.html">
+            <div class="card-icon orange">&#127760;</div>
+            <h3>DWeb Publishing</h3>
+            <p>Publish decentralized websites via IPFS and Gun.js with custom domain routing and SDK integration.</p>
+          </div>
+          <div class="card" data-href="pages/pwa.html">
+            <div class="card-icon cyan">&#128241;</div>
+            <h3>PWA &amp; Offline</h3>
+            <p>Progressive Web App with service workers, push notifications, offline sync, biometric auth, and install prompts.</p>
+          </div>
+          <div class="card" data-href="pages/events.html">
+            <div class="card-icon red">&#128227;</div>
+            <h3>Event Bus</h3>
+            <p>Unified pub/sub system across local, P2P (Gun.js), and on-chain events with 30+ typed channels.</p>
+          </div>
+        </div>
+
+        <h2>Financial &amp; Business</h2>
+        <div class="card-grid">
+          <div class="card" data-href="pages/defi.html">
+            <div class="card-icon green">&#128200;</div>
+            <h3>Composable DeFi</h3>
+            <p>Flash loans, fee management, variable pricing, and collateral token factories for building DeFi strategies.</p>
+          </div>
+          <div class="card" data-href="pages/escrow.html">
+            <div class="card-icon blue">&#129309;</div>
+            <h3>Escrow Service</h3>
+            <p>Milestone-based escrow with dispute resolution, arbitration, time-locked release, and evidence workflows.</p>
+          </div>
+          <div class="card" data-href="pages/trade-finance.html">
+            <div class="card-icon orange">&#128230;</div>
+            <h3>Trade Finance</h3>
+            <p>Deal lifecycle management with approval queues, token issuance, and supply chain integration.</p>
+          </div>
+          <div class="card" data-href="pages/nft.html">
+            <div class="card-icon pink">&#127912;</div>
+            <h3>NFT Studio</h3>
+            <p>Create and manage NFT collections using the Diamond proxy with metadata generation and minting policies.</p>
+          </div>
+        </div>
+
+        <h2>Built-in Applications</h2>
+        <p>DecentraClick ships with 30+ pre-built applications accessible from the integrated App Store:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Application</th><th>Category</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Token Wallet</td><td>Finance</td><td>View balances, send and receive tokens</td></tr>
+              <tr><td>Portfolio Tracker</td><td>Finance</td><td>Track asset portfolios and performance</td></tr>
+              <tr><td>DAO Governance</td><td>Governance</td><td>Create and vote on proposals</td></tr>
+              <tr><td>Treasury Manager</td><td>Finance</td><td>Manage organization treasury</td></tr>
+              <tr><td>Diamond Minter</td><td>Tokens</td><td>Mint tokens via Diamond proxy</td></tr>
+              <tr><td>NFT Studio</td><td>Creative</td><td>Build NFT collections</td></tr>
+              <tr><td>Token Launchpad</td><td>Finance</td><td>Launch and distribute tokens</td></tr>
+              <tr><td>Marketplace</td><td>Commerce</td><td>Peer-to-peer trading marketplace</td></tr>
+              <tr><td>Chat</td><td>Social</td><td>Encrypted P2P messaging</td></tr>
+              <tr><td>Wiki</td><td>Content</td><td>Collaborative knowledge base</td></tr>
+              <tr><td>Notes</td><td>Productivity</td><td>P2P note-taking</td></tr>
+              <tr><td>CRM</td><td>Business</td><td>Contact and relationship management</td></tr>
+              <tr><td>Invoice Manager</td><td>Finance</td><td>Create and track invoices</td></tr>
+              <tr><td>File Manager</td><td>Storage</td><td>Decentralized file management</td></tr>
+              <tr><td>Block Explorer</td><td>Developer</td><td>Browse blockchain data</td></tr>
+              <tr><td>Analytics Dashboard</td><td>Insights</td><td>Platform analytics and metrics</td></tr>
+              <tr><td>Domain Explorer</td><td>Discovery</td><td>Discover and browse domains</td></tr>
+              <tr><td>DWeb Browser</td><td>Web</td><td>Browse decentralized websites</td></tr>
+              <tr><td>Site Publisher</td><td>Web</td><td>Publish sites to DWeb</td></tr>
+              <tr><td>Service Monitor</td><td>DevOps</td><td>Monitor service health</td></tr>
+              <tr><td>Event Explorer</td><td>Developer</td><td>Browse event logs</td></tr>
+              <tr><td>Composable DeFi</td><td>Finance</td><td>Build DeFi strategies</td></tr>
+              <tr><td>Trade Deals</td><td>Finance</td><td>Trade finance deal management</td></tr>
+              <tr><td>Credit Funds</td><td>Finance</td><td>Private credit fund operations</td></tr>
+              <tr><td>Supply Chain</td><td>Logistics</td><td>Track supply chain events</td></tr>
+              <tr><td>Real Estate</td><td>Assets</td><td>Tokenized real estate</td></tr>
+              <tr><td>Carbon Credits</td><td>ESG</td><td>Carbon credit trading</td></tr>
+              <tr><td>Subscription</td><td>Commerce</td><td>Subscription management</td></tr>
+              <tr><td>Interop Bridges</td><td>Infrastructure</td><td>Cross-protocol bridges</td></tr>
+              <tr><td>Contacts</td><td>Social</td><td>Address book management</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Tech Stack</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item">
+            <h4>Frontend</h4>
+            <p>React 18, TypeScript, Vite, Tailwind CSS, Zustand, React Router</p>
+          </div>
+          <div class="quick-ref-item">
+            <h4>Blockchain</h4>
+            <p>Viem, Wagmi, Optimism, OpenZeppelin, Solidity, EIP-2535</p>
+          </div>
+          <div class="quick-ref-item">
+            <h4>P2P &amp; Storage</h4>
+            <p>Gun.js, IPFS, SEA encryption, CRDT resolution</p>
+          </div>
+          <div class="quick-ref-item">
+            <h4>API</h4>
+            <p>GraphQL Yoga, modular schema, real-time subscriptions</p>
+          </div>
+          <div class="quick-ref-item">
+            <h4>Backend</h4>
+            <p>Node.js, Express, WebSocket, Gun relay</p>
+          </div>
+          <div class="quick-ref-item">
+            <h4>Testing</h4>
+            <p>Vitest, ESLint, TypeScript strict mode</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        DecentraClick &mdash; Decentralized Application Platform on Optimism
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

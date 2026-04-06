@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Proxy (EIP-2535) - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v1.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')" class="active "><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div>
+      </div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Diamond Proxy (EIP-2535)</span></div>
+        <div class="page-header">
+          <h1>Diamond Proxy (EIP-2535)</h1>
+          <p>Modular smart contract architecture with 43+ composable facets for tokens, DeFi, identity, and governance.</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>The Diamond Proxy pattern (EIP-2535) is the cornerstone of DecentraClick's on-chain modularity. A Diamond is a single contract address that delegates function calls to multiple implementation contracts called "facets." This allows unlimited contract size and modular upgradeability.</p>
+
+        <h2>How Diamonds Work</h2>
+        <ul class="feature-list">
+          <li><strong>Single Entry Point</strong> &mdash; Users interact with one contract address; the Diamond routes calls to the appropriate facet</li>
+          <li><strong>Facet Selection</strong> &mdash; Each function signature maps to a specific facet contract via the Diamond Cut</li>
+          <li><strong>Shared Storage</strong> &mdash; All facets share the Diamond's storage, enabling cross-facet state access</li>
+          <li><strong>Upgradeable</strong> &mdash; Facets can be added, replaced, or removed without changing the Diamond address</li>
+        </ul>
+
+        <h2>Available Facets (43+)</h2>
+        <h3>Token Facets</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Facet</th><th>Standard</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>ERC721AFacet</td><td>ERC-721</td><td>Gas-optimized NFT implementation</td></tr>
+              <tr><td>ERC721AMetadataFacet</td><td>ERC-721</td><td>Token metadata management</td></tr>
+              <tr><td>ERC721MinterFacet</td><td>ERC-721</td><td>Minting operations</td></tr>
+              <tr><td>ERC721PermissionedTokenFacet</td><td>ERC-721</td><td>Permissioned token transfers</td></tr>
+              <tr><td>ERC721EnumerableFacet</td><td>ERC-721</td><td>Token enumeration</td></tr>
+              <tr><td>ERC1155AFacet</td><td>ERC-1155</td><td>Multi-token implementation</td></tr>
+              <tr><td>ERC1155CFacet</td><td>ERC-1155</td><td>Compressed multi-token</td></tr>
+              <tr><td>ERC6059FacetUpgradeable</td><td>ERC-6059</td><td>Hierarchical/nestable NFTs</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>DeFi Facets</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Facet</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>FlashLenderFacet</td><td>Flash loan provider</td></tr>
+              <tr><td>FeeManagerFacet</td><td>Fee configuration and collection</td></tr>
+              <tr><td>FeeDistributorFacet</td><td>Fee distribution to stakeholders</td></tr>
+              <tr><td>ComposableDeFiFacet</td><td>Composable DeFi strategy primitives</td></tr>
+              <tr><td>MarketplaceFacet</td><td>NFT/token marketplace operations</td></tr>
+              <tr><td>MultiSaleFacet</td><td>Batch sale operations</td></tr>
+              <tr><td>VariablePriceFacet</td><td>Dynamic pricing curves</td></tr>
+              <tr><td>CollateralTokenFactoryFacet</td><td>Collateral token creation</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Identity &amp; Access Facets</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Facet</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>ERC1056IdentityFacet</td><td>ERC-1056 identity operations</td></tr>
+              <tr><td>IdentityRegistryFacet</td><td>Identity registry management</td></tr>
+              <tr><td>GuardianRecoveryFacet</td><td>Guardian-based account recovery</td></tr>
+              <tr><td>ClaimRegistryFacet</td><td>Verifiable claim management</td></tr>
+              <tr><td>TrustedIssuersRegistryFacet</td><td>Trusted issuer whitelisting</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Trade Finance &amp; Credit Facets</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Facet</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>TradeDealAdminFacet</td><td>Trade deal administration</td></tr>
+              <tr><td>TradeDealManagementFacet</td><td>Deal lifecycle management</td></tr>
+              <tr><td>TradeDealOperationsFacet</td><td>Deal execution operations</td></tr>
+              <tr><td>CreditScoringFacet</td><td>On-chain credit scoring</td></tr>
+              <tr><td>PrivateCreditFundManagementFacet</td><td>Credit fund operations</td></tr>
+              <tr><td>CarbonCreditFacet</td><td>Carbon credit management</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Diamond Factory</h2>
+        <p>The <code>DiamondFactory</code> contract allows deploying new Diamonds with a selected set of facets in a single transaction. The UI provides a visual facet selector with dependency management.</p>
+
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>Facet dependencies are automatically resolved. For example, selecting the MarketplaceFacet will automatically include ERC721AFacet if not already selected.</div>
+        </div>
+
+        <h2>Key Components</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>diamondService</h4><p>Diamond proxy management, facet cuts, and upgrades</p></div>
+          <div class="quick-ref-item"><h4>DiamondManagePage</h4><p>UI for managing deployed Diamonds (39KB)</p></div>
+          <div class="quick-ref-item"><h4>diamondFacets config</h4><p>Registry of all 43+ facets with metadata and dependencies</p></div>
+          <div class="quick-ref-item"><h4>FacetSelector</h4><p>Visual facet selection component with dependency resolution</p></div>
+        </div>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Abstraction (ERC-4337) - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v1.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')" class="active "><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div>
+      </div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Account Abstraction (ERC-4337)</span></div>
+        <div class="page-header">
+          <h1>Account Abstraction (ERC-4337)</h1>
+          <p>Smart accounts with gasless transactions, paymasters, session keys, and bundled operations.</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>DecentraClick implements ERC-4337 Account Abstraction, enabling smart contract wallets that abstract away gas payment, support batched transactions, and provide enhanced security features like guardian recovery and session keys.</p>
+
+        <h2>Core Components</h2>
+        <ul class="feature-list">
+          <li><strong>Smart Account</strong> &mdash; A contract-based wallet that replaces EOA limitations with programmable logic</li>
+          <li><strong>Entry Point</strong> &mdash; The singleton contract that validates and executes UserOperations</li>
+          <li><strong>Bundler</strong> &mdash; Aggregates multiple UserOperations into a single on-chain transaction</li>
+          <li><strong>Paymaster</strong> &mdash; Sponsors gas costs for users based on configurable policies</li>
+          <li><strong>Account Factory</strong> &mdash; Deploys new smart accounts with deterministic addresses</li>
+        </ul>
+
+        <h2>Paymaster Policies</h2>
+        <p>Organizations can configure gas sponsorship policies for their members:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Policy</th><th>Description</th><th>Use Case</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Free Gas</strong></td><td>Organization pays all gas</td><td>Onboarding new users</td></tr>
+              <tr><td><strong>Token Payment</strong></td><td>Users pay gas in ERC-20 tokens</td><td>Token-native experiences</td></tr>
+              <tr><td><strong>Rate Limited</strong></td><td>Free gas up to a daily/weekly limit</td><td>Freemium models</td></tr>
+              <tr><td><strong>Conditional</strong></td><td>Free gas for specific contract interactions</td><td>Incentivizing platform usage</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Session Keys</h2>
+        <p>Session keys allow dApps to execute transactions on behalf of the user without requiring approval for each transaction. Keys are scoped and time-limited.</p>
+        <ul class="feature-list">
+          <li><strong>Time-bounded</strong> &mdash; Keys expire after a configurable duration</li>
+          <li><strong>Scope-limited</strong> &mdash; Keys can only call specific contracts and functions</li>
+          <li><strong>Spending limits</strong> &mdash; Maximum value per transaction and total</li>
+          <li><strong>Revocable</strong> &mdash; Users can revoke session keys at any time</li>
+        </ul>
+
+        <h2>Transaction Batching</h2>
+        <p>Smart accounts can batch multiple operations into a single UserOperation, reducing gas costs and improving UX. For example, approve + swap in a single transaction.</p>
+
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>accountAbstractionService</h4><p>ERC-4337 bundler, paymaster, and gas estimation (34KB)</p></div>
+          <div class="quick-ref-item"><h4>sessionKeyService</h4><p>Session key creation, validation, and management (12KB)</p></div>
+          <div class="quick-ref-item"><h4>useAccountAbstraction</h4><p>React hook for AA operations</p></div>
+          <div class="quick-ref-item"><h4>SmartWallet contract</h4><p>ERC-4337 compliant smart account implementation</p></div>
+        </div>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

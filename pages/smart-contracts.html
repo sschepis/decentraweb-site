@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Contracts - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v1.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')" class="active "><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div>
+      </div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Smart Contracts</span></div>
+        <div class="page-header">
+          <h1>Smart Contracts</h1>
+          <p>A comprehensive on-chain registry system with 36+ contracts deployed on Optimism.</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>DecentraClick deploys a comprehensive set of smart contracts to Optimism that serve as the on-chain backbone of the platform. These contracts manage registries, identity, tokens, governance, and more.</p>
+
+        <h2>Registry Contracts</h2>
+        <p>The platform uses a registry pattern where each domain-specific concern has its own on-chain registry contract:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Contract</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><strong>DomainRegistry</strong></td><td>Domain name registration and ownership</td></tr>
+              <tr><td><strong>IdentityRegistry</strong></td><td>ERC-1056 identity management</td></tr>
+              <tr><td><strong>ServiceRegistry</strong></td><td>Service registration and discovery</td></tr>
+              <tr><td><strong>AppRegistry</strong></td><td>Application registry</td></tr>
+              <tr><td><strong>RoleRegistry</strong></td><td>Role-based access control</td></tr>
+              <tr><td><strong>TokenRegistry</strong></td><td>Token tracking and management</td></tr>
+              <tr><td><strong>ComputeRegistry</strong></td><td>Compute function registration</td></tr>
+              <tr><td><strong>DatabaseRegistry</strong></td><td>Decentralized database registry</td></tr>
+              <tr><td><strong>OracleRegistry</strong></td><td>Oracle data feed registration</td></tr>
+              <tr><td><strong>DAORegistry</strong></td><td>DAO governance configuration</td></tr>
+              <tr><td><strong>EscrowRegistry</strong></td><td>Escrow agreement management</td></tr>
+              <tr><td><strong>AttestationRegistry</strong></td><td>Identity attestation storage</td></tr>
+              <tr><td><strong>ComplianceRegistry</strong></td><td>Compliance screening records</td></tr>
+              <tr><td><strong>CRMRegistry</strong></td><td>Contact management</td></tr>
+              <tr><td><strong>InvoiceRegistry</strong></td><td>Invoice tracking</td></tr>
+              <tr><td><strong>BackupRegistry</strong></td><td>Backup service records</td></tr>
+              <tr><td><strong>BridgeRegistry</strong></td><td>Cross-chain bridge configuration</td></tr>
+              <tr><td><strong>CDNRegistry</strong></td><td>CDN content delivery</td></tr>
+              <tr><td><strong>LaunchpadRegistry</strong></td><td>Token launch campaigns</td></tr>
+              <tr><td><strong>NftStudioRegistry</strong></td><td>NFT collection management</td></tr>
+              <tr><td><strong>RealEstateRegistry</strong></td><td>Tokenized real estate</td></tr>
+              <tr><td><strong>SupplyChainRegistry</strong></td><td>Supply chain tracking</td></tr>
+              <tr><td><strong>SubscriptionRegistry</strong></td><td>Subscription management</td></tr>
+              <tr><td><strong>ReputationRegistry</strong></td><td>Reputation scoring</td></tr>
+              <tr><td><strong>WikiRegistry</strong></td><td>Wiki content anchoring</td></tr>
+              <tr><td><strong>MessageRegistry</strong></td><td>Messaging and mail</td></tr>
+              <tr><td><strong>KYCMarketplace</strong></td><td>KYC provider marketplace</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Contract Deployment</h2>
+        <p>Contracts are deployed using the CLI deployment script. The deployed addresses are stored in <code>public/deployed-contracts.json</code> for the frontend to reference.</p>
+        <pre><code># Deploy to testnet
+npm run deploy:optimism-sepolia
+
+# Deploy to mainnet
+npm run deploy:optimism</code></pre>
+
+        <h2>Supported Networks</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>Optimism Mainnet</h4><p>Production deployment (Chain ID: 10)</p></div>
+          <div class="quick-ref-item"><h4>Optimism Sepolia</h4><p>Primary testnet (Chain ID: 11155420)</p></div>
+          <div class="quick-ref-item"><h4>Ethereum Sepolia</h4><p>L1 testnet for bridge testing (Chain ID: 11155111)</p></div>
+        </div>
+
+        <h2>ABI Management</h2>
+        <p>Contract ABIs are stored as TypeScript files in <code>src/contracts/abi/</code> with 52+ ABI definitions. The <code>forge:artifacts</code> script compiles Solidity and extracts ABIs automatically.</p>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namespaces - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v1.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link active" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div>
+      </div>
+    </nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Namespaces</span></div>
+        <div class="page-header">
+          <h1>Multi-Tenant Namespaces</h1>
+          <p>Data isolation and scoping across domains, users, and the platform via Gun.js namespace paths.</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>The Namespace Service provides multi-tenant data isolation on top of Gun.js. Every piece of data in DecentraClick lives within a namespace scope, ensuring organizations can't accidentally access each other's data.</p>
+
+        <h2>Namespace Scopes</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Scope</th><th>Path Pattern</th><th>Access</th><th>Use Case</th></tr></thead>
+            <tbody>
+              <tr><td><strong>PLATFORM</strong></td><td><code>platform/{collection}</code></td><td>Global, read by all</td><td>System configuration, shared registries, public data</td></tr>
+              <tr><td><strong>DOMAIN</strong></td><td><code>domain/{domainId}/{collection}</code></td><td>Domain members only</td><td>Organization data, settings, member content</td></tr>
+              <tr><td><strong>USER</strong></td><td><code>user/{userId}/{collection}</code></td><td>Owner only</td><td>Personal data, preferences, private keys</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How It Works</h2>
+        <ul class="feature-list">
+          <li><strong>Path-based isolation</strong> &mdash; Each scope translates to a unique Gun.js path, so data is physically separated in the P2P graph</li>
+          <li><strong>RBAC enforcement</strong> &mdash; The namespace service checks RBAC permissions before granting access to any scoped data</li>
+          <li><strong>Collection-level control</strong> &mdash; Access can be controlled at the collection level within each scope (e.g., only admins can write to the "settings" collection)</li>
+          <li><strong>Encryption</strong> &mdash; User-scoped data is encrypted with Gun.js SEA (Security, Encryption, Authorization)</li>
+          <li><strong>Offline support</strong> &mdash; Namespace data syncs via Gun.js CRDT resolution when peers reconnect</li>
+        </ul>
+
+        <h2>Service Integration</h2>
+        <p>All platform services use the namespace service for data storage. When a service reads or writes data, it specifies the namespace scope, and the service routes to the correct Gun.js path automatically.</p>
+
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>The <code>useNamespace</code> React hook provides a convenient API for components to read and write namespace-scoped data with automatic scope resolution.</div>
+        </div>
+
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>namespaceService</h4><p>Core namespace isolation, path routing, and RBAC-enforced access (37KB)</p></div>
+          <div class="quick-ref-item"><h4>useNamespace</h4><p>React hook for namespace-scoped data operations</p></div>
+          <div class="quick-ref-item"><h4>gunService</h4><p>Gun.js database initialization and P2P connectivity</p></div>
+          <div class="quick-ref-item"><h4>gunHelpers</h4><p>Utility functions for Gun.js operations</p></div>
+        </div>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Start - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button>
+  <div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div>
+        <div class="sidebar-version">Documentation v1.0</div>
+      </div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Getting Started</div>
+          <div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div>
+          <div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div>
+          <div class="nav-link active" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Core Platform</div>
+          <div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div>
+          <div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div>
+          <div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div>
+          <div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div>
+          <div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Blockchain</div>
+          <div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div>
+          <div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div>
+          <div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div>
+          <div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Governance &amp; Finance</div>
+          <div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div>
+          <div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div>
+          <div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div>
+          <div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div>
+          <div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Services</div>
+          <div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div>
+          <div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div>
+          <div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div>
+          <div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div>
+          <div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div>
+          <div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Web &amp; Apps</div>
+          <div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div>
+          <div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div>
+          <div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div>
+          <div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Data &amp; Content</div>
+          <div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div>
+          <div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div>
+          <div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div>
+          <div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Trust &amp; Compliance</div>
+          <div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div>
+          <div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div>
+          <div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a> <span>/</span> <span>Quick Start</span>
+        </div>
+        <div class="page-header">
+          <h1>Quick Start Guide</h1>
+          <p>Get DecentraClick running locally in minutes.</p>
+        </div>
+
+        <h2>Prerequisites</h2>
+        <ul class="feature-list">
+          <li><strong>Node.js 18+</strong> &mdash; Required for all servers and build tools</li>
+          <li><strong>npm or yarn</strong> &mdash; Package manager</li>
+          <li><strong>Git</strong> &mdash; Version control</li>
+          <li><strong>A Web3 wallet</strong> &mdash; MetaMask or any EIP-1193 compatible wallet</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ol class="steps">
+          <li>
+            <strong>Clone the repository</strong>
+            <pre><code>git clone https://github.com/your-org/decentraclick.git
+cd decentraclick</code></pre>
+          </li>
+          <li>
+            <strong>Install dependencies</strong>
+            <pre><code>npm install</code></pre>
+          </li>
+          <li>
+            <strong>Configure environment</strong>
+            <pre><code>cp .env.example .env
+# Edit .env with your RPC URLs, private keys, and API keys</code></pre>
+          </li>
+          <li>
+            <strong>Start all services</strong>
+            <pre><code>npm run dev</code></pre>
+            <p>This starts the Vite frontend, Gun relay, compilation server, and assistant server concurrently.</p>
+          </li>
+          <li>
+            <strong>Open the app</strong>
+            <p>Navigate to <code>http://localhost:5173</code> in your browser and connect your wallet.</p>
+          </li>
+        </ol>
+
+        <h2>Individual Services</h2>
+        <p>You can also start services individually:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Command</th><th>Service</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>npm run frontend</code></td><td>Frontend</td><td>Vite dev server on port 5173</td></tr>
+              <tr><td><code>npm run compile-server</code></td><td>Compiler</td><td>Solidity compiler WebSocket server</td></tr>
+              <tr><td><code>npm run gun-relay</code></td><td>Gun Relay</td><td>Gun.js P2P relay node</td></tr>
+              <tr><td><code>npm run assistant</code></td><td>AI Assistant</td><td>AI assistant API gateway</td></tr>
+              <tr><td><code>npm run sumsub-server</code></td><td>KYC Server</td><td>SumSub KYC integration</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Deploy Contracts</h2>
+        <p>To deploy the platform's smart contracts to a testnet:</p>
+        <pre><code># Deploy to Optimism Sepolia testnet
+npm run deploy:optimism-sepolia
+
+# Deploy to Ethereum Sepolia testnet
+npm run deploy:sepolia
+
+# Deploy to Optimism mainnet (production)
+npm run deploy:optimism</code></pre>
+
+        <div class="callout warning">
+          <span class="callout-icon">&#9888;</span>
+          <div>Mainnet deployment requires real ETH/OP for gas. Always test on Sepolia first.</div>
+        </div>
+
+        <h2>Build for Production</h2>
+        <pre><code># Build Solidity contracts
+npm run forge:build
+
+# Build frontend
+npm run build
+
+# Run tests
+npm run test:run
+
+# Lint code
+npm run lint</code></pre>
+
+        <h2>Next Steps</h2>
+        <div class="card-grid">
+          <div class="card" data-href="architecture.html">
+            <div class="card-icon purple">&#9881;</div>
+            <h3>Architecture</h3>
+            <p>Understand the platform's layered architecture and design principles.</p>
+          </div>
+          <div class="card" data-href="domains.html">
+            <div class="card-icon blue">&#127760;</div>
+            <h3>Register a Domain</h3>
+            <p>Create your first domain-organization and set up governance.</p>
+          </div>
+          <div class="card" data-href="apps.html">
+            <div class="card-icon green">&#128187;</div>
+            <h3>Build an App</h3>
+            <p>Use the App Builder to create and deploy custom applications.</p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>
