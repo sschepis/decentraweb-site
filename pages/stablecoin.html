@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDU Stablecoin (ARE) - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v1.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')" class="active "><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div>
+      </div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>SDU Stablecoin (ARE)</span></div>
+        <div class="page-header">
+          <h1>SDU Stablecoin &mdash; Autonomous Reserve Engine</h1>
+          <p>A dollar-pegged stablecoin backed by an exogenous crypto reserve basket, with overcollateralized vault minting, autonomous health management, and a revenue waterfall that powers the entire system.</p>
+        </div>
+
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>The Autonomous Reserve Engine (ARE) is implemented entirely as <a href="diamond.html">Diamond facets</a> (11 total), enabling atomic upgrades and trustless on-chain verification of solvency.</div>
+        </div>
+
+        <h2>System Overview</h2>
+        <p>The ARE produces <strong>SDU</strong>, a dollar-pegged stablecoin backed by a basket of crypto assets (USDC, BTC, ETH, stETH). A junior tranche token called <strong>RISK</strong> absorbs losses and receives surplus revenue. The system is self-powering: revenue from minting fees, liquidation penalties, and yield flows through a strict on-chain waterfall that funds insurance, keeper incentives, and peg defense before distributing surplus to RISK holders.</p>
+
+        <h2>Core Architecture</h2>
+        <ul class="feature-list">
+          <li><strong>SDU Token</strong> &mdash; ERC-20 stablecoin targeting $1 USD with authorized mint/burn and pause functionality</li>
+          <li><strong>Reserve Vault</strong> &mdash; Holds the backing basket across 4 sleeves: Immediate Liquidity, Core Collateral, Productive Yield, and Emergency Reserve</li>
+          <li><strong>RISK Token</strong> &mdash; Junior tranche ERC-20 that absorbs losses before SDU solvency is impacted; receives surplus from the revenue waterfall</li>
+          <li><strong>Price Oracle</strong> &mdash; Multiple source aggregation with TWAP, median pricing, and circuit breakers for each collateral asset</li>
+        </ul>
+
+        <h2>Minting &amp; Redemption</h2>
+        <p>Users open <strong>overcollateralized vaults</strong> to mint SDU. The minimum collateral ratio is 150%, and liquidation triggers at 120%.</p>
+        <ul class="feature-list">
+          <li><strong>Vault Mint</strong> &mdash; Deposit collateral (e.g., $150 worth of ETH) and mint SDU (e.g., $100 SDU). Users manage their vaults: add/remove collateral, mint more, repay debt, or close</li>
+          <li><strong>Tiered Redemption</strong> &mdash; Three modes depending on system stress:
+            <ul>
+              <li><em>Normal</em> &mdash; Instant redemption at a narrow fee band</li>
+              <li><em>Stress</em> &mdash; Queued with daily capacity limits</li>
+              <li><em>Severe</em> &mdash; Batch auction redemptions at transparent discount</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>Health Score &amp; State Machine</h2>
+        <p>A composite <strong>health score</strong> drives every autonomous decision in the system:</p>
+        <div class="callout">
+          <span class="callout-icon">&#128202;</span>
+          <div><code>H = w1&middot;C + w2&middot;L + w3&middot;B + w4&middot;Y &minus; w5&middot;&sigma; &minus; w6&middot;D</code><br>
+          Where C = collateralization, L = liquidity depth, B = buffer health, Y = yield performance, &sigma; = volatility penalty, D = concentration penalty. Weights sum to 10,000 bps.</div>
+        </div>
+        <p>The health score determines the <strong>reserve state machine</strong>:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>State</th><th>Condition</th><th>System Behavior</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Growth</strong></td><td>Score &gt; 7,500</td><td>Full emissions, surplus to RISK holders, relaxed fees</td></tr>
+              <tr><td><strong>Neutral</strong></td><td>5,000 &ndash; 7,500</td><td>Normal operations, moderate emissions</td></tr>
+              <tr><td><strong>Defense</strong></td><td>2,500 &ndash; 5,000</td><td>Emissions reduced, surplus redirected to buffer, elevated fees</td></tr>
+              <tr><td><strong>Recovery</strong></td><td>Score &lt; 2,500</td><td>Emissions halted, all revenue to buffer + losses, RISK dilution if needed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Insurance Buffer</h2>
+        <p>A USDC reserve funded by the revenue waterfall, used for peg defense and keeper payments. The buffer tracks its ratio relative to SDU total supply, with a configurable target (default 5%) and minimum threshold. When the buffer falls below minimum, the revenue waterfall prioritizes replenishment before all other distributions.</p>
+
+        <h2>Emission Controller</h2>
+        <p>Incentive emissions are tied directly to system health. The effective emission rate scales linearly:</p>
+        <div class="callout">
+          <span class="callout-icon">&#9889;</span>
+          <div><code>E = E_max &times; clip((H &minus; H_min) / (H_target &minus; H_min), 0, 1)</code><br>
+          Emissions auto-halt when health drops below H_min (hard-coded safety limit). An absolute maximum rate per block is enforced and cannot be overridden by governance.</div>
+        </div>
+
+        <h2>Liquidation Engine</h2>
+        <p>When a vault's collateral ratio falls below the liquidation threshold (120%), anyone can partially liquidate it:</p>
+        <ul class="feature-list">
+          <li><strong>Partial Liquidation</strong> &mdash; Up to 50% of vault debt can be liquidated at once, preventing cascading full liquidations</li>
+          <li><strong>Liquidation Bonus</strong> &mdash; Liquidators receive a 5% bonus (collateral seized exceeds debt repaid by 5%)</li>
+          <li><strong>System Deficit Recovery</strong> &mdash; If the entire reserve is undercollateralized (NAV &lt; SDU supply), RISK tokens are diluted to recapitalize the system</li>
+        </ul>
+
+        <h2>Revenue Waterfall</h2>
+        <p>All protocol revenue flows through a strict priority-ordered on-chain waterfall. Governance cannot reorder tiers:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Priority</th><th>Tier</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Replenish Losses</td><td>Cover any bad debt from liquidations</td></tr>
+              <tr><td>2</td><td>Insurance Buffer</td><td>Top up buffer to target ratio</td></tr>
+              <tr><td>3</td><td>Keeper Payments</td><td>Compensate keepers for health updates, queue processing</td></tr>
+              <tr><td>4</td><td>Peg Defense Reserve</td><td>Fund for active peg stabilization</td></tr>
+              <tr><td>5</td><td>Ecosystem Incentives</td><td>Liquidity mining and protocol growth rewards</td></tr>
+              <tr><td>6</td><td>RISK Holders</td><td>Remaining surplus distributed to junior tranche</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>NAV Calculation</h2>
+        <p>The Net Asset Value of the reserve is computed on-chain with per-asset risk-weight haircuts:</p>
+        <div class="callout">
+          <span class="callout-icon">&#128200;</span>
+          <div><code>V_usable = &Sigma;(P_i &times; Q_i &times; h_i)</code><br>
+          Where P = oracle price, Q = balance, h = risk weight (e.g., USDC=98%, BTC=75%, ETH=70%, stETH=65%). This ensures the reported solvency is conservative.</div>
+        </div>
+
+        <h2>Reserve Sleeves</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Sleeve</th><th>Target %</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>Immediate Liquidity</td><td>25%</td><td>Stablecoins for instant redemptions</td></tr>
+              <tr><td>Core Collateral</td><td>40%</td><td>Primary backing assets (BTC, ETH)</td></tr>
+              <tr><td>Productive Yield</td><td>20%</td><td>Yield-bearing positions (stETH, vaults)</td></tr>
+              <tr><td>Emergency Reserve</td><td>15%</td><td>Last-resort liquidity, highly liquid assets</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Hard-Coded Safety Limits</h2>
+        <p>These limits are enforced on-chain in the HealthMonitorFacet and <strong>cannot be overridden by governance</strong>:</p>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>Min Collateral Ratio</h4><p>105% &mdash; absolute floor, even in recovery mode</p></div>
+          <div class="quick-ref-item"><h4>Max Asset Concentration</h4><p>50% &mdash; no single asset can exceed half of reserves</p></div>
+          <div class="quick-ref-item"><h4>Min Liquidity Floor</h4><p>10% &mdash; minimum share in immediate liquidity sleeve</p></div>
+          <div class="quick-ref-item"><h4>Emission Auto-Halt</h4><p>Solvency Ratio &lt; 1.10 automatically stops all emissions</p></div>
+        </div>
+
+        <h2>Diamond Facets (11)</h2>
+        <p>The entire ARE is implemented as Diamond facets sharing storage via the proxy. Deploy the <code>stablecoin-are</code> preset to get all 11:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Facet</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>SDUTokenFacet</td><td>ERC-20 stablecoin with authorized mint/burn and pause</td></tr>
+              <tr><td>ReserveVaultFacet</td><td>4-sleeve reserve basket, NAV calculation, asset registry</td></tr>
+              <tr><td>RISKTokenFacet</td><td>Junior tranche token with surplus distribution and dilution</td></tr>
+              <tr><td>PriceOracleFacet</td><td>Multi-source oracle with TWAP, median, and circuit breakers</td></tr>
+              <tr><td>VaultMintFacet</td><td>Overcollateralized vault creation, collateral management, SDU minting</td></tr>
+              <tr><td>RedeemEngineFacet</td><td>Tiered redemption: Normal/Stress/Severe modes with queue processing</td></tr>
+              <tr><td>InsuranceBufferFacet</td><td>USDC buffer funded by waterfall; peg defense and keeper payments</td></tr>
+              <tr><td>HealthMonitorFacet</td><td>Health score computation, state machine, hard-coded safety limits</td></tr>
+              <tr><td>EmissionControllerFacet</td><td>Health-gated emission controller with auto-halt</td></tr>
+              <tr><td>LiquidationFacet</td><td>Partial vault liquidations with bonus; RISK dilution for deficit recovery</td></tr>
+              <tr><td>RevenueWaterfallFacet</td><td>Priority-ordered revenue distribution through configurable tiers</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>TypeScript Services &amp; UI</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>stablecoinService</h4><p>SDU/RISK token ops, vault CRUD, redemption flows</p></div>
+          <div class="quick-ref-item"><h4>reserveService</h4><p>Reserve NAV, sleeve allocations, liquidation &amp; revenue queries</p></div>
+          <div class="quick-ref-item"><h4>pegStabilizationService</h4><p>Health score, buffer info, peg monitoring, keeper cycles</p></div>
+          <div class="quick-ref-item"><h4>stablecoinStore (Zustand)</h4><p>Reactive state for overview, vaults, health, redemptions, history</p></div>
+        </div>
+
+        <h2>Pages &amp; Routes</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Route</th><th>Page</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>/stablecoin</code></td><td>Overview</td><td>Dashboard with SDU price, peg deviation, collateralization gauge, health score, reserve state</td></tr>
+              <tr><td><code>/stablecoin/vaults</code></td><td>Vaults</td><td>Open/manage vaults, collateral management, health indicators, liquidation warnings</td></tr>
+              <tr><td><code>/stablecoin/redeem</code></td><td>Redeem</td><td>Redemption form, mode display, queue tracking, RISK surplus claiming</td></tr>
+              <tr><td><code>/stablecoin/health</code></td><td>Health</td><td>Health score gauge, component breakdown, state machine, emissions, buffer</td></tr>
+              <tr><td><code>/stablecoin/reserve</code></td><td>Reserve</td><td>Sleeve breakdown, asset table, NAV calculation, revenue waterfall, liquidation history</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>GraphQL API</h2>
+        <p>The <code>STABLECOIN</code> schema module exposes all ARE data through the in-browser GraphQL API:</p>
+        <pre><code>query {
+  sduOverview(diamond: "0x...") {
+    totalSupply price pegDeviation
+    collateralizationRatio reserveNAV
+    healthScore reserveState
+    redemptionMode emissionsActive
+  }
+  sduVaults(diamond: "0x...", owner: "0x...") {
+    id collateralAmount debtSDU
+    collateralRatio isLiquidatable
+  }
+  sduHealthScore(diamond: "0x...") {
+    score collateralization liquidity
+    bufferHealth recommendedState
+  }
+}</code></pre>
+
+        <h2>Supported Collateral</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Asset</th><th>Risk Weight</th><th>Haircut</th><th>Sleeve</th></tr></thead>
+            <tbody>
+              <tr><td>USDC</td><td>98%</td><td>2%</td><td>Immediate Liquidity</td></tr>
+              <tr><td>BTC</td><td>75%</td><td>25%</td><td>Core Collateral</td></tr>
+              <tr><td>ETH</td><td>70%</td><td>30%</td><td>Core Collateral</td></tr>
+              <tr><td>stETH</td><td>65%</td><td>35%</td><td>Productive Yield</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Key Invariants</h2>
+        <ul class="feature-list">
+          <li><strong>Overcollateralized</strong> &mdash; <code>SDU.totalSupply &le; ReserveVault.calculateNAV()</code> at all times</li>
+          <li><strong>Health-driven</strong> &mdash; State transitions, emissions, and redemption modes are all determined by the health score</li>
+          <li><strong>Waterfall integrity</strong> &mdash; Revenue always flows losses &rarr; buffer &rarr; keepers &rarr; peg &rarr; incentives &rarr; RISK; governance cannot reorder</li>
+          <li><strong>Insurance before RISK</strong> &mdash; The insurance buffer receives funding before RISK holders in every scenario</li>
+          <li><strong>Partial liquidation</strong> &mdash; At most 50% of vault debt per liquidation event, preventing cascading failures</li>
+        </ul>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>
