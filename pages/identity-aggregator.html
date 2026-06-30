@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roles &amp; Permissions - DecentraClick Docs</title>
+  <title>Identity Aggregator - DecentraClick Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -14,7 +14,7 @@
       <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
       <div class="sidebar-nav">
         <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
-        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('identity-aggregator.html')"><span class="nav-icon">&#128279;</span> Identity Aggregator</div><div class="nav-link active" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link active" onclick="navigate('identity-aggregator.html')"><span class="nav-icon">&#128279;</span> Identity Aggregator</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
         <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div><div class="nav-link" onclick="navigate('zk-attestations.html')"><span class="nav-icon">&#128272;</span> ZK Attestations</div></div>
         <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('swap-liquidity.html')"><span class="nav-icon">&#128260;</span> Swap &amp; Liquidity</div><div class="nav-link" onclick="navigate('credit-funds.html')"><span class="nav-icon">&#127974;</span> Credit Funds</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')"><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
         <div class="nav-section"><div class="nav-section-title">AI &amp; Automation</div><div class="nav-link" onclick="navigate('ai-assistant.html')"><span class="nav-icon">&#129302;</span> AI Assistant</div><div class="nav-link" onclick="navigate('kinetic-click.html')"><span class="nav-icon">&#128640;</span> KineticClick</div></div>
@@ -26,60 +26,93 @@
         <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
     <main class="main">
       <div class="content">
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Roles &amp; Permissions</span></div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Identity Aggregator</span></div>
         <div class="page-header">
-          <h1>Roles &amp; Permissions (RBAC)</h1>
-          <p>Fine-grained role-based access control with 9 built-in role templates and scope-based permissions.</p>
+          <h1>Cross-Chain Identity Aggregator</h1>
+          <p>Resolve identities across multiple protocols (DecentraClick, ENS, Lens, Farcaster) and normalize them into a unified, confidence-scored profile.</p>
         </div>
 
-        <h2>Overview</h2>
-        <p>DecentraClick uses a comprehensive Role-Based Access Control (RBAC) system that governs access across the entire platform. Roles are defined per-domain and enforced at both the UI and service layers.</p>
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>The aggregator is initialized on app bootstrap and reacts to identity changes across all adapters. It bridges the gap between on-chain identity registries and social/web3 identity protocols.</div>
+        </div>
 
-        <h2>Built-in Role Templates</h2>
-        <p>The platform ships with 9 pre-configured role templates that cover common organizational patterns:</p>
+        <h2>How It Works</h2>
+        <p>The <strong>Resolution Engine</strong> accepts any identifier (wallet address, ENS name, Lens handle, Farcaster FID, DecentraClick identity ID) and queries all adapters in parallel:</p>
+        <ol class="steps">
+          <li><strong>Query Adapters</strong> &mdash; Each adapter translates the input identifier into its native query format and returns identity data</li>
+          <li><strong>Normalize</strong> &mdash; A <strong>Normalization Pipeline</strong> maps disparate schema fields into a unified <code>AggregatedIdentity</code> format</li>
+          <li><strong>Confidence Score</strong> &mdash; A <strong>Confidence Scorer</strong> weighs each source by reliability, data freshness, and cross-source agreement</li>
+          <li><strong>Merge Results</strong> &mdash; Field-level consensus merges data from multiple sources; conflicting fields use the highest-confidence source</li>
+        </ol>
+
+        <h2>Protocol Adapters</h2>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Role</th><th>Description</th><th>Typical Permissions</th></tr></thead>
+            <thead><tr><th>Adapter</th><th>Source</th><th>Data Resolved</th></tr></thead>
             <tbody>
-              <tr><td><strong>Owner</strong></td><td>Domain owner with full control</td><td>All permissions</td></tr>
-              <tr><td><strong>Admin</strong></td><td>Administrative access</td><td>Manage members, settings, services</td></tr>
-              <tr><td><strong>Manager</strong></td><td>Team/project management</td><td>Manage content, moderate, invite</td></tr>
-              <tr><td><strong>Editor</strong></td><td>Content creation and editing</td><td>Create/edit content, publish</td></tr>
-              <tr><td><strong>Contributor</strong></td><td>Can submit content for review</td><td>Create content, submit for approval</td></tr>
-              <tr><td><strong>Member</strong></td><td>Standard member access</td><td>Read, comment, use apps</td></tr>
-              <tr><td><strong>Viewer</strong></td><td>Read-only access</td><td>View content and data</td></tr>
-              <tr><td><strong>Moderator</strong></td><td>Content moderation</td><td>Approve, reject, flag content</td></tr>
-              <tr><td><strong>Developer</strong></td><td>Technical access</td><td>Deploy contracts, manage services, access APIs</td></tr>
+              <tr><td><strong>DecentraClick</strong></td><td>IdentityRegistry (on-chain) + Gun.js profiles</td><td>Identity ID, linked wallets, KYC claims, domain memberships, reputation</td></tr>
+              <tr><td><strong>ENS</strong></td><td>Ethereum Name Service</td><td>Primary ENS name, avatar, text records (email, URL, Twitter, GitHub)</td></tr>
+              <tr><td><strong>Lens</strong></td><td>Lens Protocol</td><td>Lens handle, profile metadata, follower counts, owned profiles</td></tr>
+              <tr><td><strong>Farcaster</strong></td><td>Farcaster Hubs</td><td>FID, display name, bio, avatar, verified addresses, follower/following counts</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2>Permission Scopes</h2>
-        <p>Permissions are scoped to specific resources and actions:</p>
+        <h2>Identity Normalization</h2>
+        <p>All identity data is normalized into a unified <code>AggregatedIdentity</code> structure:</p>
+        <pre><code>interface AggregatedIdentity {
+  // Unified profile
+  displayName: string;
+  avatar: string;
+  bio: string;
+
+  // All known identifiers
+  id: string;           // primary DecentraClick identity ID
+  wallets: string[];    // all linked wallet addresses
+  aliases: {            // cross-protocol handles
+    ens?: string;
+    lens?: string;
+    farcaster?: number;
+  };
+
+  // Verifiable claims
+  claims: { topic: number; issuer: string; valid: boolean }[];
+  kycStatus: 'none' | 'pending' | 'verified' | 'rejected';
+
+  // Confidence metadata
+  confidenceScore: number;  // 0-100
+  sourceBreakdown: { adapter: string; confidence: number }[];
+  lastUpdated: number;
+}</code></pre>
+
+        <h2>Confidence Scoring</h2>
+        <p>Each resolution is assigned a 0-100 confidence score based on:</p>
         <ul class="feature-list">
-          <li><strong>Domain Scope</strong> &mdash; Permissions apply within a specific domain organization</li>
-          <li><strong>Service Scope</strong> &mdash; Permissions for specific platform services (compute, database, etc.)</li>
-          <li><strong>Resource Scope</strong> &mdash; Permissions on individual resources (files, contracts, etc.)</li>
-          <li><strong>Action Scope</strong> &mdash; Granular actions (create, read, update, delete, execute, admin)</li>
+          <li><strong>Source Reliability</strong> &mdash; On-chain data (DecentraClick, ENS) scores higher than social data (Lens, Farcaster)</li>
+          <li><strong>Data Freshness</strong> &mdash; Recently updated profiles get higher confidence; stale data decays</li>
+          <li><strong>Cross-Source Agreement</strong> &mdash; When multiple sources agree on a field (e.g., same wallet), confidence increases</li>
+          <li><strong>Claim Validity</strong> &mdash; Verified KYC claims from trusted issuers boost the score significantly</li>
         </ul>
 
-        <h2>Custom Roles</h2>
-        <p>Beyond the built-in templates, organizations can create custom roles by combining specific permissions. Custom roles are managed through the Role Manager page and stored on-chain in the <code>RoleRegistry</code> contract.</p>
-
-        <h2>Enforcement Points</h2>
-        <ul class="feature-list">
-          <li><strong>UI Guards</strong> &mdash; AuthGuard component prevents unauthorized UI access</li>
-          <li><strong>Service Layer</strong> &mdash; rbacService checks permissions before service operations</li>
-          <li><strong>Namespace Isolation</strong> &mdash; Data access enforced at the namespace/Gun.js level</li>
-          <li><strong>On-chain</strong> &mdash; RoleRegistry contract enforces role assignments</li>
-        </ul>
-
+        <h2>Storage Backends</h2>
+        <p>Resolved identities can be stored in three backends:</p>
         <div class="quick-ref">
-          <div class="quick-ref-item"><h4>rbacService</h4><p>Permission checking and role assignment operations</p></div>
-          <div class="quick-ref-item"><h4>RoleRegistry</h4><p>On-chain role storage and verification</p></div>
-          <div class="quick-ref-item"><h4>AuthGuard</h4><p>React component for route-level access control</p></div>
-          <div class="quick-ref-item"><h4>Role Manager</h4><p>UI page for creating and managing roles</p></div>
+          <div class="quick-ref-item"><h4>Gun.js</h4><p>Default backend. Full aggregated identity stored in user's P2P graph for offline access and cross-device sync</p></div>
+          <div class="quick-ref-item"><h4>IPFS</h4><p>Verifiable credential storage (<code>ipfsCredentialStore</code>). Attestation data pinned for long-term availability</p></div>
+          <div class="quick-ref-item"><h4>DDB</h4><p>Structured identity schemas in the DecentraClick Database for queryable, schema-enforced storage</p></div>
         </div>
+
+        <h2>Key Components</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>ResolutionEngine</h4><p>Orchestrates multi-adapter resolution, normalizes results, merges with confidence weighting</p></div>
+          <div class="quick-ref-item"><h4>NormalizationPipeline</h4><p>Maps each adapter's output schema to the unified <code>AggregatedIdentity</code> format</p></div>
+          <div class="quick-ref-item"><h4>ConfidenceScorer</h4><p>Weighted scoring based on source reliability, data freshness, and cross-source consensus</p></div>
+          <div class="quick-ref-item"><h4>useIdentityAggregator</h4><p>React hook: <code>resolve(identifier)</code>, <code>myAggregatedIdentity</code>, reactive subscriptions</p></div>
+        </div>
+
+        <h2>Page Route</h2>
+        <p>The <code>/identity-aggregator</code> page provides a search interface where users can resolve any identifier across all protocols and view the unified profile, confidence breakdown, and per-adapter raw data.</p>
       </div>
       <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
     </main>

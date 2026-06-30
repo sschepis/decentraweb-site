@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reputation System - DecentraClick Docs</title>
+  <title>Security &amp; Recovery - DecentraClick Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -22,41 +22,79 @@
         <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
         <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
         <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
-        <div class="nav-section"><div class="nav-section-title">Security &amp; Platform</div><div class="nav-link" onclick="navigate('security-recovery.html')"><span class="nav-icon">&#128737;</span> Security &amp; Recovery</div><div class="nav-link" onclick="navigate('developer-tools.html')"><span class="nav-icon">&#128736;</span> Developer Tools</div></div>
-        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link active" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
+        <div class="nav-section"><div class="nav-section-title">Security &amp; Platform</div><div class="nav-link active" onclick="navigate('security-recovery.html')"><span class="nav-icon">&#128737;</span> Security &amp; Recovery</div><div class="nav-link" onclick="navigate('developer-tools.html')"><span class="nav-icon">&#128736;</span> Developer Tools</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
     <main class="main">
       <div class="content">
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Reputation System</span></div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Security &amp; Recovery</span></div>
         <div class="page-header">
-          <h1>Reputation System</h1>
-          <p>On-chain reputation scoring with multi-dimensional metrics, history tracking, and trust graphs.</p>
+          <h1>Security Dashboard &amp; Account Recovery</h1>
+          <p>Comprehensive security management: API key administration, audit logging, security scanning, and multi-method account recovery including social guardianship and biometric auth.</p>
         </div>
 
-        <h2>Overview</h2>
-        <p>The Reputation System provides a multi-dimensional scoring framework for users and organizations. Scores are computed from on-chain activity, peer endorsements, and verified credentials.</p>
+        <h2>Security Dashboard</h2>
+        <p>Accessible at <code>/security</code>, the Security Dashboard provides a unified interface for platform security management:</p>
 
-        <h2>Score Dimensions</h2>
+        <h3>API Key Management</h3>
         <ul class="feature-list">
-          <li><strong>Transaction History</strong> &mdash; Score based on successful on-chain transactions</li>
-          <li><strong>Peer Endorsements</strong> &mdash; Ratings from other platform participants</li>
-          <li><strong>Governance Participation</strong> &mdash; Voting frequency and proposal quality</li>
-          <li><strong>Compliance Score</strong> &mdash; KYC completion and compliance status</li>
-          <li><strong>Service Reliability</strong> &mdash; Uptime and performance for service providers</li>
-          <li><strong>Escrow Completion</strong> &mdash; Successful escrow deal completion rate</li>
+          <li><strong>Generate API Keys</strong> &mdash; Create scoped API keys for programmatic access to platform services. Keys are stored encrypted in the user's Gun.js private space</li>
+          <li><strong>Permission Scopes</strong> &mdash; Granular permissions per key: read/write access to specific namespaces, services, and domains</li>
+          <li><strong>Revocation</strong> &mdash; Instant key revocation with audit trail. Revoked keys are permanently invalidated</li>
+          <li><strong>Key Rotation</strong> &mdash; Scheduled key rotation with configurable expiry windows</li>
         </ul>
 
-        <h2>Use Cases</h2>
+        <h3>Audit Logging</h3>
         <ul class="feature-list">
-          <li><strong>Governance Weight</strong> &mdash; Reputation can influence voting power</li>
-          <li><strong>Access Control</strong> &mdash; Minimum reputation for certain features</li>
-          <li><strong>Trust Scoring</strong> &mdash; Counterparty risk assessment in trade finance</li>
-          <li><strong>Marketplace Rankings</strong> &mdash; Seller/buyer reputation for marketplace transactions</li>
+          <li><strong>PII-Stripped</strong> &mdash; All audit logs are automatically scrubbed of personally identifiable information before storage</li>
+          <li><strong>Comprehensive Events</strong> &mdash; Tracks: logins, contract interactions, service access, API key usage, role changes, KYC verification attempts</li>
+          <li><strong>Queryable</strong> &mdash; Filter by event type, time range, IP address, or action with pagination support</li>
+          <li><strong>Export</strong> &mdash; Export audit logs as CSV or JSON for external compliance tooling</li>
         </ul>
 
+        <h3>Security Scanning</h3>
+        <ul class="feature-list">
+          <li><strong>Service Scans</strong> &mdash; Automated vulnerability scanning of registered services and endpoints</li>
+          <li><strong>Score Reports</strong> &mdash; Each scan produces a security score with categorized findings (critical, high, medium, low)</li>
+          <li><strong>Scheduled Scans</strong> &mdash; Configurable scan schedules for continuous monitoring</li>
+        </ul>
+
+        <h2>Account Recovery</h2>
+        <p>DecentraClick supports multiple recovery methods to prevent permanent loss of access:</p>
+
+        <h3>Social Recovery (M-of-N Guardians)</h3>
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>Social recovery is implemented in the <a href="smart-wallet.html">SmartWallet</a> contract via the <code>GuardianRecoveryFacet</code> on the Diamond proxy.</div>
+        </div>
+        <ol class="steps">
+          <li><strong>Configure Guardians</strong> &mdash; Set up to N trusted guardians (other addresses) and a recovery threshold M</li>
+          <li><strong>Initiate Recovery</strong> &mdash; Request recovery to a new wallet address. Guardians are notified</li>
+          <li><strong>Guardian Approval</strong> &mdash; M of N guardians must approve the recovery request within the timeout window</li>
+          <li><strong>Execute Recovery</strong> &mdash; Once the threshold is met, ownership transfers to the new wallet. The old wallet is permanently disabled</li>
+        </ol>
+
+        <h3>Biometric Recovery (DFNS WebAuthn)</h3>
+        <p>For users using the <strong>DFNS WebAuthn</strong> managed wallet mode, recovery leverages platform biometrics (fingerprint, Face ID) plus backup email. The DFNS service provides enterprise-grade key recovery without exposing private keys to the application.</p>
+
+        <h3>Smart Wallet Recovery (ERC-4337)</h3>
+        <p>ERC-4337 smart accounts include built-in recovery via the <code>GuardianRecoveryFacet</code>. The SmartWallet contract maintains a list of guardians and a recovery threshold. When recovery is initiated, a timelock ensures guardians have time to veto malicious attempts.</p>
+
+        <h2>Data Backup &amp; Portability</h2>
         <div class="quick-ref">
-          <div class="quick-ref-item"><h4>reputationService</h4><p>Reputation calculation and history (20KB)</p></div>
-          <div class="quick-ref-item"><h4>ReputationRegistry</h4><p>On-chain reputation score storage</p></div>
-          <div class="quick-ref-item"><h4>ReputationServicePage</h4><p>Reputation dashboard UI (16KB)</p></div>
+          <div class="quick-ref-item"><h4>Backup Service</h4><p>Export all Gun.js data (domains, apps, settings, profiles) as an encrypted backup bundle. Restore on any device</p></div>
+          <div class="quick-ref-item"><h4>Data Portability</h4><p>Export identity claims, linked wallets, and domain ownership proofs as portable credentials at <code>/data-portability</code></p></div>
+          <div class="quick-ref-item"><h4>Backup Registry</h4><p>On-chain <code>BackupRegistry</code> anchors backup hashes for verification of data integrity</p></div>
+          <div class="quick-ref-item"><h4>Scheduled Backups</h4><p>Configure automated backups to Gun.js peers or IPFS with configurable intervals</p></div>
+        </div>
+
+        <h2>Key Components</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>securityService</h4><p>API key management, audit logging, access control rules, security scanning</p></div>
+          <div class="quick-ref-item"><h4>AuditLogViewer</h4><p>React component: paginated, filterable audit log viewer with export</p></div>
+          <div class="quick-ref-item"><h4>ApiKeyManager</h4><p>React component: generate, revoke, and manage API keys with scope configuration</p></div>
+          <div class="quick-ref-item"><h4>SmartWalletRecovery</h4><p>React component: guardian configuration, recovery initiation, approval tracking</p></div>
+          <div class="quick-ref-item"><h4>backupService</h4><p>Encrypted backup creation, restore, scheduled backups, IPFS anchoring</p></div>
+          <div class="quick-ref-item"><h4>GuardianRecoveryFacet</h4><p>Diamond facet: social recovery via M-of-N guardians with timelock protection</p></div>
         </div>
       </div>
       <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>

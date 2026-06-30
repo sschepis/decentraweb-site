@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZK Attestations &amp; Privacy - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v2.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('identity-aggregator.html')"><span class="nav-icon">&#128279;</span> Identity Aggregator</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div><div class="nav-link active" onclick="navigate('zk-attestations.html')"><span class="nav-icon">&#128272;</span> ZK Attestations</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('swap-liquidity.html')"><span class="nav-icon">&#128260;</span> Swap &amp; Liquidity</div><div class="nav-link" onclick="navigate('credit-funds.html')"><span class="nav-icon">&#127974;</span> Credit Funds</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')"><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
+        <div class="nav-section"><div class="nav-section-title">AI &amp; Automation</div><div class="nav-link" onclick="navigate('ai-assistant.html')"><span class="nav-icon">&#129302;</span> AI Assistant</div><div class="nav-link" onclick="navigate('kinetic-click.html')"><span class="nav-icon">&#128640;</span> KineticClick</div></div>
+        <div class="nav-section"><div class="nav-section-title">Financial Services</div><div class="nav-link" onclick="navigate('fiat-ramps.html')"><span class="nav-icon">&#127975;</span> Fiat Ramps</div><div class="nav-link" onclick="navigate('launchpad.html')"><span class="nav-icon">&#128165;</span> Token Launchpad</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Security &amp; Platform</div><div class="nav-link" onclick="navigate('security-recovery.html')"><span class="nav-icon">&#128737;</span> Security &amp; Recovery</div><div class="nav-link" onclick="navigate('developer-tools.html')"><span class="nav-icon">&#128736;</span> Developer Tools</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>ZK Attestations</span></div>
+        <div class="page-header">
+          <h1>Zero-Knowledge Attestations &amp; Privacy Proofs</h1>
+          <p>Generate and verify privacy-preserving proofs about identity claims using 4 custom ZK circuits. Prove you hold a valid attestation without revealing the underlying data.</p>
+        </div>
+
+        <div class="callout info">
+          <span class="callout-icon">&#128161;</span>
+          <div>ZK proofs are generated client-side in a Web Worker using <code>snarkjs</code> and verified on-chain via the <a href="diamond.html">ZKAttestationVerifierFacet</a>.</div>
+        </div>
+
+        <h2>4 ZK Circuits (Circom 2.1.6)</h2>
+        <p>All circuits use Poseidon hashing for efficient on-chain verification and are compiled with Groth16 proving. The Verifier facet is deployed as a Diamond facet.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Circuit</th><th>Purpose</th><th>Example Use Case</th></tr></thead>
+            <tbody>
+              <tr><td><strong>RangeProof</strong></td><td>Prove a field value satisfies a threshold (gt/lt/gte/lte) without revealing the value</td><td>"My credit score is above 700" &mdash; proven without sharing the score</td></tr>
+              <tr><td><strong>EqualityProof</strong></td><td>Prove a specific field in an attestation equals a target value</td><td>"My country field is 'US'" &mdash; proven from a multi-field attestation</td></tr>
+              <tr><td><strong>MembershipProof</strong></td><td>Prove a value exists in a Merkle tree (up to 1024 elements)</td><td>"My address is on the accredited investor list" &mdash; without revealing which one</td></tr>
+              <tr><td><strong>SelectiveDisclosure</strong></td><td>Reveal chosen fields from an attestation while hiding others</td><td>"I'm KYC verified, and my age is over 21" &mdash; revealing 2 of 8 fields</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How It Works</h2>
+        <h3>1. Attestation Creation</h3>
+        <p>A trusted issuer (e.g., KYC provider) issues an attestation with up to 8 fields on-chain via <code>addClaim()</code> on IdentityRegistry. Each claim field is stored as a Poseidon commitment: <code>commitment = Poseidon(fieldValue, salt)</code>. The attestation root is <code>Poseidon(allFieldCommitments)</code>.</p>
+
+        <h3>2. Proof Generation (Client-Side)</h3>
+        <ol class="steps">
+          <li><strong>Select Predicate</strong> &mdash; Choose the circuit type and configure parameters (threshold, field index, disclose mask)</li>
+          <li><strong>Resolve Inputs</strong> &mdash; <code>predicateResolver</code> maps user-friendly predicates to circuit inputs from on-chain attestation data</li>
+          <li><strong>Generate Witness</strong> &mdash; The Prover Web Worker runs the circuit with private inputs (field values + salts)</li>
+          <li><strong>Create Proof</strong> &mdash; Groth16 prover generates the proof bundle: <code>{ proof, publicSignals, attestationRoot }</code></li>
+        </ol>
+
+        <h3>3. On-Chain Verification</h3>
+        <p>The <strong>ZKAttestationVerifierFacet</strong> on the Diamond proxy verifies proofs on-chain:</p>
+        <pre><code>// Verify a RangeProof
+function verifyRangeProof(
+  uint256 threshold,
+  uint256 operator, // 0=gt, 1=gte, 2=lt, 3=lte
+  uint256 fieldCommitment,
+  bytes32 attestationRoot,
+  uint256[8] calldata proof
+) external view returns (bool);
+
+// Verify a SelectiveDisclosure
+function verifySelectiveDisclosure(
+  bytes32 attestationRoot,
+  uint256[8] calldata discloseMask,
+  uint256[8] calldata disclosedValues,
+  uint256[8] calldata fieldCommitments,
+  uint256[8] calldata proof
+) external view returns (bool);</code></pre>
+
+        <h2>Predicate Types</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Predicate</th><th>Circuit</th><th>Parameters</th></tr></thead>
+            <tbody>
+              <tr><td>Range</td><td>RangeProof</td><td><code>field, threshold, operator (gt/gte/lt/lte)</code></td></tr>
+              <tr><td>Equality</td><td>EqualityProof</td><td><code>fieldIndex, targetValue</code></td></tr>
+              <tr><td>Membership</td><td>MembershipProof</td><td><code>field, merkleRoot</code></td></tr>
+              <tr><td>Selective Disclosure</td><td>SelectiveDisclosure</td><td><code>discloseMask[8], disclosedValues[8]</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>ZK Proof Builder UI</h2>
+        <p>The platform includes a visual proof builder at <code>/zk-proofs</code>:</p>
+        <ul class="feature-list">
+          <li><strong>ZKProofBuilderPanel</strong> &mdash; Configures predicates, generates witness, and produces Groth16 proofs in-browser via Web Worker</li>
+          <li><strong>ZKPredicateRow</strong> &mdash; Per-predicate configuration (range bounds, field selection, disclosure masks)</li>
+          <li><strong>ZKProofResultCard</strong> &mdash; Displays generated proof bundle with verification status and option to submit to chain</li>
+        </ul>
+
+        <h2>Privacy Guarantees</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>Zero Knowledge</h4><p>Verifier learns only what the predicate claims &mdash; no field values are exposed beyond disclosed fields</p></div>
+          <div class="quick-ref-item"><h4>Non-Interactive</h4><p>Proofs require no back-and-forth between prover and verifier; any third party can verify independently</p></div>
+          <div class="quick-ref-item"><h4>Succinct</h4><p>Groth16 proofs are constant-size (~128 bytes) regardless of circuit complexity</p></div>
+          <div class="quick-ref-item"><h4>On-Chain Verifiable</h4><p>The ZKAttestationVerifierFacet performs all verification in a single transaction</p></div>
+        </div>
+
+        <h2>Key Components</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>zkAttestationService</h4><p>Predicate resolution, proof generation dispatch, verification, Gun.js proof storage (12KB)</p></div>
+          <div class="quick-ref-item"><h4>predicateResolver</h4><p>Maps user-friendly predicates to circuit-specific inputs with field resolution</p></div>
+          <div class="quick-ref-item"><h4>ZKProofBuilderPanel</h4><p>React component for building and validating ZK proof requests in-browser</p></div>
+          <div class="quick-ref-item"><h4>ZKAttestationVerifierFacet</h4><p>Diamond facet for on-chain Groth16 proof verification of all 4 circuits</p></div>
+        </div>
+
+        <h2>Circuits Location</h2>
+        <pre><code>circuits/
+  range_proof/range_proof.circom        # 64-bit range comparison via Poseidon
+  equality_proof/equality_proof.circom  # Single field equality from attestation
+  membership_proof/membership_proof.circom  # Merkle tree membership (10 levels)
+  selective_disclosure/selective_disclosure.circom  # Partial attestation reveal</code></pre>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

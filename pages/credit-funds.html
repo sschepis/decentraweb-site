@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escrow Service - DecentraClick Docs</title>
+  <title>Credit Funds - DecentraClick Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -16,7 +16,7 @@
         <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
         <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('identity-aggregator.html')"><span class="nav-icon">&#128279;</span> Identity Aggregator</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
         <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div><div class="nav-link" onclick="navigate('zk-attestations.html')"><span class="nav-icon">&#128272;</span> ZK Attestations</div></div>
-        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('swap-liquidity.html')"><span class="nav-icon">&#128260;</span> Swap &amp; Liquidity</div><div class="nav-link" onclick="navigate('credit-funds.html')"><span class="nav-icon">&#127974;</span> Credit Funds</div><div class="nav-link active" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')"><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('swap-liquidity.html')"><span class="nav-icon">&#128260;</span> Swap &amp; Liquidity</div><div class="nav-link active" onclick="navigate('credit-funds.html')"><span class="nav-icon">&#127974;</span> Credit Funds</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')"><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
         <div class="nav-section"><div class="nav-section-title">AI &amp; Automation</div><div class="nav-link" onclick="navigate('ai-assistant.html')"><span class="nav-icon">&#129302;</span> AI Assistant</div><div class="nav-link" onclick="navigate('kinetic-click.html')"><span class="nav-icon">&#128640;</span> KineticClick</div></div>
         <div class="nav-section"><div class="nav-section-title">Financial Services</div><div class="nav-link" onclick="navigate('fiat-ramps.html')"><span class="nav-icon">&#127975;</span> Fiat Ramps</div><div class="nav-link" onclick="navigate('launchpad.html')"><span class="nav-icon">&#128165;</span> Token Launchpad</div></div>
         <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
@@ -26,40 +26,60 @@
         <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
     <main class="main">
       <div class="content">
-        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Escrow Service</span></div>
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Credit Funds</span></div>
         <div class="page-header">
-          <h1>Escrow Service</h1>
-          <p>Milestone-based escrow with dispute resolution, arbitration, and time-locked release.</p>
+          <h1>Credit Scoring &amp; Private Credit Funds</h1>
+          <p>On-chain credit scoring with commitment privacy, plus private credit fund management for deposits, withdrawals, and deal tracking.</p>
         </div>
 
-        <h2>Overview</h2>
-        <p>The Escrow Service provides trustless, milestone-based payment agreements between parties. Funds are held in smart contracts and released based on milestone completion, with built-in dispute resolution.</p>
-
-        <h2>Features</h2>
+        <h2>On-Chain Credit Scoring</h2>
+        <p>The <strong>CreditScoringFacet</strong> (Diamond facet) enables trusted publishers to issue privacy-preserving credit scores on-chain using commitment hashing:</p>
         <ul class="feature-list">
-          <li><strong>Milestone-Based Release</strong> &mdash; Break agreements into milestones; funds release as each is completed</li>
-          <li><strong>Dispute Resolution</strong> &mdash; Either party can raise a dispute; an arbitrator makes the final decision</li>
-          <li><strong>Time-Locked Auto-Release</strong> &mdash; Funds auto-release after a timeout if no dispute is raised</li>
-          <li><strong>Evidence Submission</strong> &mdash; Parties can submit evidence during disputes</li>
-          <li><strong>Appeal Process</strong> &mdash; Dispute decisions can be appealed with additional evidence</li>
-          <li><strong>Multi-token</strong> &mdash; Escrow supports ETH and any ERC-20 token</li>
+          <li><strong>Commitment Privacy</strong> &mdash; Raw credit scores are never stored on-chain. Only a commitment hash <code>Poseidon(score, address, salt)</code> is published. The actual score can be selectively disclosed via ZK range proofs</li>
+          <li><strong>Trusted Publishers</strong> &mdash; Only authorized publishers can issue credit scores. The <code>setCreditPublisher()</code> function controls the publisher registry</li>
+          <li><strong>Credit Tiers</strong> &mdash; <code>getCreditTier()</code> resolves a commitment to a tier: Excellent (750+), Good (700-749), Fair (650-699), Poor (below 650)</li>
         </ul>
 
-        <h2>Roles</h2>
+        <p>Combined with <a href="zk-attestations.html">ZK Attestations</a>, users can prove "My credit tier is Excellent" without revealing their exact score or identity.</p>
+
+        <h2>Credit Scoring Factors</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>Payment History</h4><p>On-chain repayment track record from trade deals and credit fund instruments</p></div>
+          <div class="quick-ref-item"><h4>Collateral Ratio</h4><p>Active collateral positions across protocols, weighted by asset risk</p></div>
+          <div class="quick-ref-item"><h4>Account Age</h4><p>Identity and wallet age on Optimism, factoring in activity consistency</p></div>
+          <div class="quick-ref-item"><h4>KYC Status</h4><p>Verified KYC claims from trusted issuers boost creditworthiness</p></div>
+        </div>
+
+        <h2>Private Credit Funds</h2>
+        <p>A dedicated application for managing private credit investments, built on the Diamond proxy with 3 dedicated facets:</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Role</th><th>Responsibilities</th></tr></thead>
+            <thead><tr><th>Facet</th><th>Purpose</th></tr></thead>
             <tbody>
-              <tr><td><strong>Buyer</strong></td><td>Funds the escrow, approves milestone completion</td></tr>
-              <tr><td><strong>Seller</strong></td><td>Delivers work, submits milestones for approval</td></tr>
-              <tr><td><strong>Arbitrator</strong></td><td>Resolves disputes, reviews evidence, makes binding decisions</td></tr>
+              <tr><td><strong>PrivateCreditFundManagementFacet</strong></td><td>Fund creation, capital calls, NAV reporting, investor whitelisting</td></tr>
+              <tr><td><strong>PrivateCreditFundOperationsFacet</strong></td><td>Deposits, withdrawals, interest distribution, fee collection</td></tr>
+              <tr><td><strong>PrivateCreditFundDistributionFacet</strong></td><td>Revenue waterfall for fund distributions, carried interest calculation</td></tr>
             </tbody>
           </table>
         </div>
 
+        <h2>Fund Management Features</h2>
+        <ul class="feature-list">
+          <li><strong>Fund Creation</strong> &mdash; Create credit funds with configurable parameters: target raise, minimum investment, lockup period, management fee, carried interest</li>
+          <li><strong>Investor Dashboard</strong> &mdash; View active funds, deposited capital, accrued interest, and pending distributions</li>
+          <li><strong>Deal Tracking</strong> &mdash; Fund managers publish deals, track repayment schedules, and report performance. Deals integrate with the <a href="trade-finance.html">Trade Finance</a> system</li>
+          <li><strong>Interest Distribution</strong> &mdash; Automated interest distribution to investors based on pro-rata share and waterfall configuration</li>
+        </ul>
+
+        <h2>Collateral Token Integration</h2>
+        <p>Credit funds can use <strong>RestrictedCollateralTokens</strong> issued via the <code>CollateralTokenFactoryFacet</code>. These are compliance-gated ERC-20 tokens that restrict transfers to verified identities, ensuring regulatory compliance for private fund interests.</p>
+
+        <h2>Key Components</h2>
         <div class="quick-ref">
-          <div class="quick-ref-item"><h4>escrowService</h4><p>Escrow agreement lifecycle and dispute management (32KB)</p></div>
-          <div class="quick-ref-item"><h4>EscrowRegistry</h4><p>On-chain escrow agreement storage</p></div>
+          <div class="quick-ref-item"><h4>CreditScoringFacet</h4><p>Diamond facet: publish score commitments, resolve tiers, manage publishers</p></div>
+          <div class="quick-ref-item"><h4>creditScoringService</h4><p>TypeScript service: score resolution, tier calculation, publisher verification</p></div>
+          <div class="quick-ref-item"><h4>privateCreditFundService</h4><p>Fund CRUD, deposit/withdrawal flows, deal tracking, distributions</p></div>
+          <div class="quick-ref-item"><h4>CreditFundsApp</h4><p>Pre-built UI application: fund listing, investor dashboard, deposit/withdrawal forms</p></div>
         </div>
       </div>
       <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>

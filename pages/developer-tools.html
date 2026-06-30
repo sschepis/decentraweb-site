@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Tools - DecentraClick Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button class="sidebar-toggle">&#9776;</button><div class="sidebar-overlay"></div>
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo"><div class="logo-icon">&#9670;</div> DecentraClick</div><div class="sidebar-version">Documentation v2.0</div></div>
+      <div class="sidebar-search"><input type="text" placeholder="Search docs..."></div>
+      <div class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Getting Started</div><div class="nav-link" onclick="navigate('../index.html')"><span class="nav-icon">&#127968;</span> Home</div><div class="nav-link" onclick="navigate('architecture.html')"><span class="nav-icon">&#9881;</span> Architecture</div><div class="nav-link" onclick="navigate('quickstart.html')"><span class="nav-icon">&#9889;</span> Quick Start</div></div>
+        <div class="nav-section"><div class="nav-section-title">Core Platform</div><div class="nav-link" onclick="navigate('domains.html')"><span class="nav-icon">&#127760;</span> Domains &amp; Orgs</div><div class="nav-link" onclick="navigate('identity.html')"><span class="nav-icon">&#128100;</span> Identity &amp; Auth</div><div class="nav-link" onclick="navigate('identity-aggregator.html')"><span class="nav-icon">&#128279;</span> Identity Aggregator</div><div class="nav-link" onclick="navigate('rbac.html')"><span class="nav-icon">&#128274;</span> Roles &amp; Permissions</div><div class="nav-link" onclick="navigate('namespaces.html')"><span class="nav-icon">&#128193;</span> Namespaces</div><div class="nav-link" onclick="navigate('events.html')"><span class="nav-icon">&#128227;</span> Event Bus</div></div>
+        <div class="nav-section"><div class="nav-section-title">Blockchain</div><div class="nav-link" onclick="navigate('smart-contracts.html')"><span class="nav-icon">&#128220;</span> Smart Contracts</div><div class="nav-link" onclick="navigate('diamond.html')"><span class="nav-icon">&#128142;</span> Diamond Proxy</div><div class="nav-link" onclick="navigate('account-abstraction.html')"><span class="nav-icon">&#128179;</span> Account Abstraction</div><div class="nav-link" onclick="navigate('smart-wallet.html')"><span class="nav-icon">&#128176;</span> Smart Wallet</div><div class="nav-link" onclick="navigate('zk-attestations.html')"><span class="nav-icon">&#128272;</span> ZK Attestations</div></div>
+        <div class="nav-section"><div class="nav-section-title">Governance &amp; Finance</div><div class="nav-link" onclick="navigate('dao.html')"><span class="nav-icon">&#127963;</span> DAO Governance</div><div class="nav-link" onclick="navigate('treasury.html')"><span class="nav-icon">&#128181;</span> Treasury</div><div class="nav-link" onclick="navigate('defi.html')"><span class="nav-icon">&#128200;</span> Composable DeFi</div><div class="nav-link" onclick="navigate('swap-liquidity.html')"><span class="nav-icon">&#128260;</span> Swap &amp; Liquidity</div><div class="nav-link" onclick="navigate('credit-funds.html')"><span class="nav-icon">&#127974;</span> Credit Funds</div><div class="nav-link" onclick="navigate('escrow.html')"><span class="nav-icon">&#129309;</span> Escrow</div><div class="nav-link" onclick="navigate('trade-finance.html')"><span class="nav-icon">&#128230;</span> Trade Finance</div><div class="nav-link" onclick="navigate('stablecoin.html')"><span class="nav-icon">&#128178;</span> SDU Stablecoin</div></div>
+        <div class="nav-section"><div class="nav-section-title">AI &amp; Automation</div><div class="nav-link" onclick="navigate('ai-assistant.html')"><span class="nav-icon">&#129302;</span> AI Assistant</div><div class="nav-link" onclick="navigate('kinetic-click.html')"><span class="nav-icon">&#128640;</span> KineticClick</div></div>
+        <div class="nav-section"><div class="nav-section-title">Financial Services</div><div class="nav-link" onclick="navigate('fiat-ramps.html')"><span class="nav-icon">&#127975;</span> Fiat Ramps</div><div class="nav-link" onclick="navigate('launchpad.html')"><span class="nav-icon">&#128165;</span> Token Launchpad</div></div>
+        <div class="nav-section"><div class="nav-section-title">Services</div><div class="nav-link" onclick="navigate('compute.html')"><span class="nav-icon">&#9881;</span> Compute</div><div class="nav-link" onclick="navigate('database.html')"><span class="nav-icon">&#128451;</span> Database (DDB)</div><div class="nav-link" onclick="navigate('graphql.html')"><span class="nav-icon">&#128268;</span> GraphQL API</div><div class="nav-link" onclick="navigate('oracle.html')"><span class="nav-icon">&#127348;</span> Oracles</div><div class="nav-link" onclick="navigate('cdn.html')"><span class="nav-icon">&#127757;</span> CDN</div><div class="nav-link" onclick="navigate('email.html')"><span class="nav-icon">&#9993;</span> Email</div></div>
+        <div class="nav-section"><div class="nav-section-title">Web &amp; Apps</div><div class="nav-link" onclick="navigate('dweb.html')"><span class="nav-icon">&#127760;</span> DWeb Publishing</div><div class="nav-link" onclick="navigate('pwa.html')"><span class="nav-icon">&#128241;</span> PWA &amp; Offline</div><div class="nav-link" onclick="navigate('apps.html')"><span class="nav-icon">&#128187;</span> App Store &amp; Builder</div><div class="nav-link" onclick="navigate('plugins.html')"><span class="nav-icon">&#128268;</span> Plugin SDK</div></div>
+        <div class="nav-section"><div class="nav-section-title">Data &amp; Content</div><div class="nav-link" onclick="navigate('nft.html')"><span class="nav-icon">&#127912;</span> NFT Studio</div><div class="nav-link" onclick="navigate('wiki.html')"><span class="nav-icon">&#128214;</span> Wiki</div><div class="nav-link" onclick="navigate('crm.html')"><span class="nav-icon">&#128101;</span> CRM</div><div class="nav-link" onclick="navigate('supply-chain.html')"><span class="nav-icon">&#128666;</span> Supply Chain</div></div>
+        <div class="nav-section"><div class="nav-section-title">Security &amp; Platform</div><div class="nav-link" onclick="navigate('security-recovery.html')"><span class="nav-icon">&#128737;</span> Security &amp; Recovery</div><div class="nav-link active" onclick="navigate('developer-tools.html')"><span class="nav-icon">&#128736;</span> Developer Tools</div></div>
+        <div class="nav-section"><div class="nav-section-title">Trust &amp; Compliance</div><div class="nav-link" onclick="navigate('compliance.html')"><span class="nav-icon">&#9989;</span> Compliance</div><div class="nav-link" onclick="navigate('reputation.html')"><span class="nav-icon">&#11088;</span> Reputation</div><div class="nav-link" onclick="navigate('interop.html')"><span class="nav-icon">&#128279;</span> Interoperability</div></div></nav>
+    <main class="main">
+      <div class="content">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Developer Tools</span></div>
+        <div class="page-header">
+          <h1>Developer Console &amp; Platform Tools</h1>
+          <p>Developer tools for building, testing, and monitoring on the DecentraClick platform: GraphQL console, contract deployment, event explorer, block explorer, usage metering, and service monitoring.</p>
+        </div>
+
+        <h2>Developer Console</h2>
+        <p>Accessible at <code>/developer</code>, the Developer Console provides a unified interface for all development tasks:</p>
+        <ul class="feature-list">
+          <li><strong>Contract Deployment Wizard</strong> &mdash; Deploy platform contracts on supported networks via CLI or the web-based wizard at <code>/contract-deploy</code>. Includes network selection, owner configuration, step-by-step progress tracking, and final deployment summary. Supports CREATE2 deterministic deployment via <code>DynamicContractDeployer</code></li>
+          <li><strong>Compilation Server</strong> &mdash; WebSocket-based Solidity compiler (port 7770). Dual-engine: Forge (primary) + solc.js (fallback). Compiles and returns ABI + bytecode in real-time. Token-authenticated with path traversal protection</li>
+          <li><strong>Diamond Management</strong> &mdash; Visual diamond proxy manager at <code>/diamond-manage</code>: deploy diamonds, add/remove facets, configure permissions, view facet selectors, call any facet function</li>
+        </ul>
+
+        <h2>Event Explorer</h2>
+        <p>Browse and filter on-chain events from platform contracts. The <code>EventExplorerPage</code> (<code>/events-explorer</code>) and <code>EventExplorerApp</code> provide:</p>
+        <ul class="feature-list">
+          <li><strong>Real-Time Events</strong> &mdash; Live event streaming via the Event Bus with on-chain bridging. All 30+ event channels available</li>
+          <li><strong>Filtering</strong> &mdash; Filter by contract address, event name, block range, and indexed parameters</li>
+          <li><strong>Detail Inspection</strong> &mdash; View full event payload, transaction context, decoded log data, and block metadata</li>
+          <li><strong>Export</strong> &mdash; Export events as CSV/JSON for external analysis</li>
+        </ul>
+
+        <h2>Block Explorer</h2>
+        <p>On-chain block explorer at <code>/block-explorer</code> (also available as the <code>BlockExplorerApp</code> in the App Store):</p>
+        <ul class="feature-list">
+          <li><strong>Block Browser</strong> &mdash; Browse latest blocks with timestamp, transaction count, gas used, and miner info</li>
+          <li><strong>Transaction Lookup</strong> &mdash; Search by transaction hash to view sender, recipient, value, gas, status, and event logs</li>
+          <li><strong>Address Pages</strong> &mdash; View address balances, transaction history, and contract interactions</li>
+          <li><strong>Multi-Chain</strong> &mdash; Switch between supported networks (Sepolia, OP Sepolia, OP Mainnet, Base)</li>
+        </ul>
+
+        <h2>Usage Metering &amp; Billing</h2>
+        <p>The platform tracks API usage for billing and rate limiting:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Metric</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><strong>API Calls</strong></td><td>GraphQL queries, mutations, and subscription events tracked per-user per-domain</td></tr>
+              <tr><td><strong>Compute Usage</strong></td><td>WASM function execution time and resource consumption</td></tr>
+              <tr><td><strong>Data Storage</strong></td><td>Gun.js data volume, IPFS storage, and DDB record counts</td></tr>
+              <tr><td><strong>Bandwidth</strong></td><td>CDN bandwidth, d-web traffic, and peer sync data transfer</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>View usage reports at <code>/usage</code> with aggregation by day, week, or month. Usage data is collected by the <code>serviceMetering</code> and <code>usageMeteringService</code> modules.</p>
+
+        <h2>Service Monitoring</h2>
+        <p>The <code>ServiceMonitorApp</code> and <code>/service-monitoring</code> page provide:</p>
+        <ul class="feature-list">
+          <li><strong>Health Dashboard</strong> &mdash; Real-time status of all registered services with uptime percentages, latency charts, and error rates</li>
+          <li><strong>Alert Configuration</strong> &mdash; Set thresholds for latency, error rates, and downtime. Alerts fire via the Event Bus and can trigger webhooks</li>
+          <li><strong>Metrics Collection</strong> &mdash; <code>serviceMetricsCollector</code> aggregates uptime, latency, and throughput from <code>serviceDiscovery</code> scans</li>
+          <li><strong>Issue Tracking</strong> &mdash; Auto-creates issues on service degradation with severity classification and resolution tracking</li>
+        </ul>
+
+        <h2>Contract Compiler</h2>
+        <p>The <strong>Compilation Server</strong> (port 7770) compiles Solidity contracts submitted via WebSocket:</p>
+        <pre><code>// Connect to compilation server
+const ws = new WebSocket('ws://localhost:7770');
+
+// Authenticate
+ws.send(JSON.stringify({ type: 'auth', token: COMPILATION_TOKEN }));
+
+// Submit compilation
+ws.send(JSON.stringify({
+  id: 'req-1',
+  source: '// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n...',
+  contractName: 'MyContract'
+}));
+
+// Receive result
+ws.onmessage = (event) => {
+  const result = JSON.parse(event.data);
+  // result.contract = { name, source, bytecode, abi }
+};</code></pre>
+
+        <h2>Key Components</h2>
+        <div class="quick-ref">
+          <div class="quick-ref-item"><h4>DeveloperConsolePage</h4><p>Full developer interface at <code>/developer</code>: contract deployment, diamond management, ABI browser</p></div>
+          <div class="quick-ref-item"><h4>ContractCompiler</h4><p>WebSocket-based Solidity compilation via Forge + solc.js fallback</p></div>
+          <div class="quick-ref-item"><h4>eventExplorerService</h4><p>On-chain event query, filtering, and real-time subscription</p></div>
+          <div class="quick-ref-item"><h4>BlockExplorerApp</h4><p>Pre-built block explorer application: blocks, transactions, addresses</p></div>
+          <div class="quick-ref-item"><h4>usageMeteringService</h4><p>API usage tracking and billing aggregation per domain</p></div>
+          <div class="quick-ref-item"><h4>serviceMetricsCollector</h4><p>Service health metrics: uptime, latency, throughput aggregation</p></div>
+        </div>
+      </div>
+      <footer class="footer">DecentraClick &mdash; Decentralized Application Platform on Optimism</footer>
+    </main>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>
